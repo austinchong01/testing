@@ -55,4 +55,20 @@ function caesarCipher(string, key) {
   return res.join("");
 }
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(array){
+    const object = {};
+
+    let sum = 0;
+    array.forEach(element => {
+        sum += element;
+    });
+    object.average = sum / array.length;
+    object.min = Math.min(... array);
+    object.max = Math.max(... array);
+    object.length = array.length;
+    return object;
+}
+
+analyzeArray([1, 2, 3, 4])
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

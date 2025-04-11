@@ -1,6 +1,12 @@
-const {capitalize, reverseString, calculator, caesarCipher} = require('./index');
+const {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} = require("./index");
 
-test('capitalize', () => {
+test("capitalize", () => {
   expect(capitalize("aweston")).toBe("Aweston");
   expect(capitalize("test")).toBe("Test");
   expect(capitalize("test")).not.toBe("test");
@@ -26,4 +32,13 @@ test("caesar cipher", () => {
   expect(caesarCipher("xyz", 1)).toBe("yza");
   expect(caesarCipher("aweston", 4)).toBe("eaiwxsr");
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("analyze array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
